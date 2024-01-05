@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body{font-size:18px;
+margin:0 auto;
+padding:1%;
+}
+        .topheader{margin:3px;
+width:99.7%;
+height:150px;
+border:1px solid black;
+margin-bottom:3px;
+text-align:center;
+font-size:50px;
+font-weight:bolder;
+border-radius:7px;
+}
+        .studentdata{border:1px solid black;
+width:99%;
+margin-top:3px;
+border-radius:5px;
+padding:2px;
+}
+        .studentheader{border:1px solid black;
+width:99%;
+background-color:lightgray;
+margin-top:3px;
+font-size:20px;
+text-align:center;
+font-weight:bolder;
+border-radius:7px;
+}
+        .logovbps{height:100px;
+}
+        table{margin:0 auto;
+width:99.7%;
+margin-top:5px;
+margin-bottom:5px;
+border:1px solid black;
+border-collapse:collapse;
+padding:4px;
+border-radius:25px;
+text-align:center;
+}
+        th{border:1px solid black;
+padding:4px;
+font-weight:bold;
+border-radius:25px;
+}
+        td{border:1px solid black;
+padding:4px;
+border-radius:25px;
+}
+        .marks{border:1px solid black;
+width:99%;
+margin-top:3px;
+border-radius:5px;
+padding:2px;
+}
+        img{margin:10px;
+float:left;
+}
+        .bodycontainer{border:2px solid black;
+padding:1.2%;
+border-radius:7px;
+height:100%;
+}
+        .chartcontainer{margin-top:3px;
+width:100%;
+height:350px;
+border:1px solid black;
+margin-bottom:3px;
+border-radius:7px;
+}
+.name{
+    text-align: left;
+    padding-left: 100px;
+}
+    </style>
+    <title>result</title>
+</head>
+<body>
+    <center>
+    <div class="bodycontainer">
+    <div class="topheader">
+        <img src="https://www.schoolmykids.com/smk-media/2019/04/Vishwa-Bharati-Public-School-Ghaziabad.png"class="logovbps">
+        vishwa bharati public school
+    </div>
+
+    <div class="studentdata">
+        <div class="studentheader">
+            term-1<br>
+            student's profile
+        </div>
+
+       <table id="studentinfotable">
+    <tr>
+        <th id="studentname">student's name</th>
+        <td colspan="3" id="studentnamevalue" class="name"></td>
+    </tr>
+    <tr>
+        <th id="classsec">class/sec</th>
+        <td id="classsecvalue"></td>
+        <th id="rollno">roll no.</th>
+        <td id="rollnovalue"></td>
+    </tr>
+    <tr>
+        <th id="fathername">father's name</th>
+        <td id="fathernamevalue"></td>
+        <th id="dob">date of birth</th>
+        <td id="dobvalue"></td>
+    </tr>
+    <tr>
+        <th id="mothername">mother's name</th>
+        <td id="mothernamevalue"></td>
+        <th id="admissionno">admission no.</th>
+        <td id="admissionnovalue"></td>
+    </tr>
+</table>
+
+    </div>
+    <div class="marks">
+        <div class="studentheader">
+            part-1 schoolastic
+        </div>
+        <table>
+            <tr>
+                <th>subject</th>
+                <th>pt <br> (10)</th>
+                <th>nb <br> (5)</th>
+                <th>se/sa <br>(5)</th>
+                <th>hfy <br> (80)</th>
+                <th>total <br> (100)</th>
+                <th>grade</th>
+            </tr>
+            <tr>
+                <th>english</th>
+                <td id="english1"></td>
+                <td id="english2"></td>
+                <td id="english3"></td>
+                <td id="english4"></td>
+                <td id="totall1"></td>
+                <td id="english6"></td>
+            </tr>
+            <tr>
+                <th>hindi</th>
+                <td id="hindi1"></td>
+                <td id="hindi2"></td>
+                <td id="hindi3"></td>
+                <td id="hindi4"></td>
+                <td id="totall2"></td>
+                <td id="hindi6"></td>
+            </tr>
+            <tr>
+                <th>science</th>
+                <td id="science1"></td>
+                <td id="science2"></td>
+                <td id="science3"></td>
+                <td id="science4"></td>
+                <td id="totall3"></td>
+                <td id="science6"></td>
+            </tr>
+            <tr>
+                <th>maths</th>
+                <td id="math1"></td>
+                <td id="math2"></td>
+                <td id="math3"></td>
+                <td id="math4"></td>
+                <td id="totall4"></td>
+                <td id="math6"></td>
+            </tr>
+            <tr>
+                <th>social science</th>
+                <td id="ss1"></td>
+                <td id="ss2"></td>
+                <td id="ss3"></td>
+                <td id="ss4"></td>
+                <td id="totall5"></td>
+                <td id="ss6"></td>
+            </tr>
+            <tr>
+                <th>sanskrit</th>
+                <td id="sanskrit1"></td>
+                <td id="sanskrit2"></td>
+                <td id="sanskrit3"></td>
+                <td id="sanskrit4"></td>
+                <td id="totall6"></td>
+                <td id="sanskrit6"></td>
+            </tr>
+            <tr>
+                <th>computer (t-50/p-30)</th>
+                <td id="computer1"></td>
+                <td id="computer2"></td>
+                <td id="computer3"></td>
+                <td id="computer4"></td>
+                <td id="totall7"></td>
+                <td id="computer6"></td>
+            </tr>
+            <tr>
+                <th>total</th>
+                <td id="totalpt"></td>
+                <td id="totalnb"></td>
+                <td id="totalsesa"></td>
+                <td id="totalhfy"></td>
+                <td id="totaltotal"></td>
+                <td id=""></td>
+            </tr>
+            <tr>
+                <th>grand total</th>
+                <td colspan="3" id="grandtotal"></td>
+                <th colspan="2">percentage</th>
+                <td id="percentage"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="chartcontainer">
+    <canvas id="chart"></canvas>
+    </div>
+</div>
+<script>
+function getQueryParams() {
+    const queryParams = {};
+    const queryString = window.location.search.slice(1);
+    const pairs = queryString.split('&');
+    pairs.forEach(pair => {
+        const [key, value] = pair.split('=');
+        queryParams[key] = decodeURIComponent(value.replace(/\+/g, ' '));
+    });
+    return queryParams;
+}
+
+function updateIndexPage() {
+    const queryParams = getQueryParams();
+
+    document.getElementById("studentnamevalue").innerText = queryParams.studentname || '';
+    document.getElementById("classsecvalue").innerText = queryParams.class || '';
+    document.getElementById("rollnovalue").innerText = queryParams.rollnumber || '';
+    document.getElementById("fathernamevalue").innerText = queryParams.fathername || '';
+    document.getElementById("dobvalue").innerText = queryParams.dob || '';
+    document.getElementById("mothernamevalue").innerText = queryParams.mothername || '';
+    document.getElementById("admissionnovalue").innerText = queryParams.admissionnumber || '';
+
+    document.getElementById("english1").innerText = Math.round(queryParams.englishpt / 3) || '';
+    document.getElementById("hindi1").innerText = Math.round(queryParams.hindipt / 3) || '';
+    document.getElementById("science1").innerText = Math.round(queryParams.sciencept / 3) || '';
+    document.getElementById("math1").innerText = Math.round(queryParams.mathspt / 3) || '';
+    document.getElementById("ss1").innerText = Math.round(queryParams.socialsciencept / 3) || '';
+    document.getElementById("sanskrit1").innerText = Math.round(queryParams.sanskritpt / 3) || '';
+    document.getElementById("computer1").innerText = Math.round(queryParams.computerpt / 3) || '';
+
+    document.getElementById("english2").innerText = queryParams.englishnb || '';
+    document.getElementById("hindi2").innerText = queryParams.hindinb || '';
+    document.getElementById("science2").innerText = queryParams.sciencenb || '';
+    document.getElementById("math2").innerText = queryParams.mathsnb || '';
+    document.getElementById("ss2").innerText = queryParams.socialsciencenb || '';
+    document.getElementById("sanskrit2").innerText = queryParams.sanskritnb || '';
+    document.getElementById("computer2").innerText = queryParams.computernb || '';
+
+    document.getElementById("english3").innerText = queryParams.englishsesa || '';
+    document.getElementById("hindi3").innerText = queryParams.hindisesa || '';
+    document.getElementById("science3").innerText = queryParams.sciencesesa || '';
+    document.getElementById("math3").innerText = queryParams.mathssesa || '';
+    document.getElementById("ss3").innerText = queryParams.socialsciencesesa || '';
+    document.getElementById("sanskrit3").innerText = queryParams.sanskritsesa || '';
+    document.getElementById("computer3").innerText = queryParams.computersesa || '';
+
+    document.getElementById("english4").innerText = queryParams.englishhfy || '';
+    document.getElementById("hindi4").innerText = queryParams.hindihfy || '';
+    document.getElementById("science4").innerText = queryParams.sciencehfy || '';
+    document.getElementById("math4").innerText = queryParams.mathshfy || '';
+    document.getElementById("ss4").innerText = queryParams.socialsciencehfy || '';
+    document.getElementById("sanskrit4").innerText = queryParams.sanskrithfy || '';
+    document.getElementById("computer4").innerText = queryParams.computerhfy || '';
+
+    const totalEnglish = (Math.round(Number(queryParams.englishpt) / 3) + Number(queryParams.englishnb) + Number(queryParams.englishsesa) + Number(queryParams.englishhfy));
+    const totalHindi = (Math.round(Number(queryParams.hindipt) / 3) + Number(queryParams.hindinb) + Number(queryParams.hindisesa) + Number(queryParams.hindihfy));
+    const totalScience = (Math.round(Number(queryParams.sciencept) / 3) + Number(queryParams.sciencenb) + Number(queryParams.sciencesesa) + Number(queryParams.sciencehfy));
+    const totalMath = (Math.round(Number(queryParams.mathspt) / 3) + Number(queryParams.mathsnb) + Number(queryParams.mathssesa) + Number(queryParams.mathshfy));
+    const totalSS = (Math.round(Number(queryParams.socialsciencept) / 3) + Number(queryParams.socialsciencenb) + Number(queryParams.socialsciencesesa) + Number(queryParams.socialsciencehfy));
+    const totalSanskrit = (Math.round(Number(queryParams.sanskritpt) / 3) + Number(queryParams.sanskritnb) + Number(queryParams.sanskritsesa) + Number(queryParams.sanskrithfy));
+    const totalComputer = (Math.round(Number(queryParams.computerpt) / 3) + Number(queryParams.computernb) + Number(queryParams.computersesa) + Number(queryParams.computerhfy));
+
+    document.getElementById("totall1").innerText = totalEnglish;
+    document.getElementById("totall2").innerText = totalHindi;
+    document.getElementById("totall3").innerText = totalScience;
+    document.getElementById("totall4").innerText = totalMath;
+    document.getElementById("totall5").innerText = totalSS;
+    document.getElementById("totall6").innerText = totalSanskrit;
+    document.getElementById("totall7").innerText = totalComputer;
+
+    const totalpt = (Math.round(Number(queryParams.englishpt) / 3) + Math.round(Number(queryParams.hindipt) / 3) + Math.round(Number(queryParams.sciencept) / 3) + Math.round(Number(queryParams.mathspt) / 3) + Math.round(Number(queryParams.socialsciencept) / 3) + Math.round(Number(queryParams.sanskritpt) / 3) + Math.round(Number(queryParams.computerpt) / 3)).toFixed(0);
+    const totalnb = (Number(queryParams.englishnb) + Number(queryParams.hindinb) + Number(queryParams.sciencenb) + Number(queryParams.mathsnb) + Number(queryParams.socialsciencenb) + Number(queryParams.sanskritnb) + Number(queryParams.computernb));
+    const totalsesa = (Number(queryParams.englishsesa) + Number(queryParams.hindisesa) + Number(queryParams.sciencesesa) + Number(queryParams.mathssesa) + Number(queryParams.socialsciencesesa) + Number(queryParams.sanskritsesa) + Number(queryParams.computersesa));
+    const totalhfy = (Number(queryParams.englishhfy) + Number(queryParams.hindihfy) + Number(queryParams.sciencehfy) + Number(queryParams.mathshfy) + Number(queryParams.socialsciencehfy) + Number(queryParams.sanskrithfy) + Number(queryParams.computerhfy));
+    const totaltotal = (totalpt + totalnb + totalsesa + totalhfy);
+
+    document.getElementById("totalpt").innerText = totalpt + '/70';
+    document.getElementById("totalnb").innerText = totalnb + '/35';
+    document.getElementById("totalsesa").innerText = totalsesa + '/35';
+    document.getElementById("totalhfy").innerText = totalhfy + '/560';
+
+    const grandTotal = (Math.round(Number(totalEnglish) + Number(totalHindi) + Number(totalScience) + Number(totalMath) + Number(totalSS) + Number(totalSanskrit) + Number(totalComputer)).toFixed(0));
+    const percentage = (((Number(grandTotal) / 700) * 100).toFixed(2)).toString();
+    
+    document.getElementById("grandtotal").innerText = isNaN(grandTotal) ? 'N/A' : grandTotal + "/700";
+    document.getElementById("percentage").innerText = isNaN(percentage) ? 'N/A' : percentage + '%';
+
+    const totalptpercent = ((Math.round(Number(totalpt) / 70) * 100).toFixed(0));
+    const totalnbpercent = ((Number(totalnb) / 35 * 100).toFixed(0));
+    const totalsesapercent = ((Number(totalsesa) / 35 * 100).toFixed(0));
+    const totalhfypercent = ((Number(totalhfy) / 560 * 100).toFixed(0));
+
+//graph
+    const ctxChart = document.getElementById('chart').getContext('2d');
+    const barChart = new Chart(ctxChart, {
+        type: 'bar',
+        data: {
+            labels: ['English', 'Hindi', 'Science', 'Math', 'Social Science', 'Sanskrit', 'Computer'],
+            datasets: [{
+                label: '',
+                data: [totalEnglish, totalHindi, totalScience, totalMath, totalSS, totalSanskrit, totalComputer],
+                backgroundColor: ['red', 'yellow', 'blue', 'green', 'orange','purple','brown'],
+                borderColor: ['black', 'black', 'black', 'black'],
+                borderWidth: 2
+            }]
+        }
+    });
+}
+
+updateIndexPage();
+</script>
+</center>
+</body>
+</html>

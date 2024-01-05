@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Webpage</title>
+    <style>
+body{
+    background-image: url(pomti.png);
+    overflow: hidden;
+    position: relative;
+}
+
+.top-welcome{
+    font-size: 54px;
+    text-align: center;
+    font: bold;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-top: 2px;
+    color: white;
+}
+.project{
+    background: none;
+    border: 2px solid white;
+    font-size: large;
+    color: white;
+    border-radius: 6px;
+    margin: 5px;
+    padding: 10px;
+    transition:transform 0.2s;
+}
+.project:hover{
+    color: black;
+    background: white;
+    border: 2px solid black;
+    transform: scale(1.2);
+    cursor:pointer;
+}
+.project-container{
+    border: 2px solid white;
+    border-radius: 5px;
+    text-align: right;
+    margin-bottom: 10px;
+    margin-top: 4px;
+}
+#myVideo {
+position: fixed;
+right: 0;
+bottom: 0;
+height: 130%;
+z-index: -1;
+}
+.recent{
+    border: 2px solid white;
+}
+    </style>
+    <script src="main.js"></script>
+</head>
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="https://rr3---sn-qxaelne6.c.drive.google.com/videoplayback?expire=1704442075&ei=q46XZd2eDLy7mvUP87WA0AM&ip=2409:40d0:1021:14fd:29b4:9c22:89f0:d2e9&id=af78ad58d730e2f9&itag=18&source=webdrive&requiressl=yes&xpc=EghonaK1InoBAQ==&mh=BQ&mm=32&mn=sn-qxaelne6&ms=su&mv=m&mvi=3&pl=36&ttl=transient&susc=dr&driveid=1Yx6AToG-a9FjW3_92_AIpX-gy-QCgaPx&app=explorer&eaua=EieHs-cgoFg&mime=video/mp4&vprv=1&prv=1&dur=16.068&lmt=1704430986908082&mt=1704430848&subapp=DRIVE_WEB_FILE_VIEWER&txp=0006224&sparams=expire,ei,ip,id,itag,source,requiressl,xpc,ttl,susc,driveid,app,eaua,mime,vprv,prv,dur,lmt&sig=AJfQdSswRAIgTMbhaX340wl2zQNT8Dw_OqKAWdNAgnagExa1m2GvcYECIG4SvRVeNFX2Rz2SiJBC__xGw9Z-XaLhIylR4sfkKMRz&lsparams=mh,mm,mn,ms,mv,mvi,pl&lsig=AAO5W4owRgIhALqu2VGNEvN94vmyZchaZ1Yd7JnjFup29WkOl8CmkDZIAiEAy9URg4xYEPZS9fsXkYGsOyoEyT5Cz_qiwtyuj9Wqbf4=&cpn=hmrmQcwa_yq5qVTC&c=WEB_EMBEDDED_PLAYER&cver=1.20231217.00.00" type="video/mp4">
+    </video>
+
+    <div class="top-welcome">
+    WELCOME TO THE WEBSITE OF VAIBHAV SHARMA!!
+</div>
+
+<div class="project-container">
+    
+    <button onclick="window.open('form_of_result.html');" target="_blank"class="project">Result finder</button>
+    <button onclick="window.open('form-login.html');" target="_blank"class="project">form of login</button>
+</div>
+
+<div class="recent">
+
+</div>
+</body>
+</html>
