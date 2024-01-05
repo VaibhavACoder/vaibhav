@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>forms</title>
+    <link rel="stylesheet" href="deginer.css">
+    <style>
+        body {
+    background: url(https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero.jpg);
+    font-size: 25px;
+    font-family: "Times New Roman";
+    color: white;
+}
+
+.reset {
+    background-color: #ff0000; /* Start with middle white */
+    color: #fff;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.reset:hover {
+    animation: resetkeyframe 2s infinite alternate;
+    transform: scale(1.5);
+}
+
+@keyframes resetkeyframe {
+    0% {
+        background-color: skyblue; /* Middle white */
+    }
+    50% {
+        background-color: orange; /* Transition to sky blue */
+    }
+    100% {
+        background-color: yellow; /* End with middle white */
+    }
+}
+.submit{
+    background-color: #0026ff; /* Start with middle white */
+    color: #fff;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.submit:hover {
+    animation: colorChange 2s infinite alternate;
+    transform: scale(1.5);
+}
+
+@keyframes colorChange {
+    0% {
+        background-color: #ff0000;
+    }
+    50% {
+        background-color: #55ff00;
+    }
+    100% {
+        background-color: #3498db;
+    }
+}
+.header{
+    font-size: 50px;
+    height: 60px;
+    width: 125px;
+    border-radius: 25px;
+    background: orange;
+    margin: auto;
+    border: 5px solid skyblue;
+}
+.corner{
+    height: 25px;
+    width: 80%;
+    border-radius: 25px;
+    margin: auto;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+        forms
+    </div>
+    <br>
+    <form id="loginForm" onsubmit="validateForm()">
+        username: <input type="text" id="username" class="corner"><br><br>
+        password: <input type="password" id="password" class="corner"><br><br>
+        <input type="submit" value="submit" class="submit"> </input>
+        <input type="reset" value="reset" class="reset">
+    </form>
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username === "vaibhav" && password === "Gnoida@123") {
+                window.location.href = "form_of_result.html";
+            } else {
+                alert("Sorry, your password is wrong");
+            }
+        }
+    </script>
+</body>
+</html>
