@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    body {
+      background-color: lightgreen;
+    }
+
+    .board {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 10px;
+      width: 80%;
+      background: lightgoldenrodyellow;
+      color: grey;
+      text-align: center;
+      border-radius: 10px;
+      border: 1px solid grey;
+      height: 150px;
+      font-size: 80px;
+    }
+
+    button {
+      width: 300px;
+      border: 2px solid white;
+      border-radius: 50px;
+      background: black;
+      color: white;
+      font: bolder;
+      font-size: 28px;
+      transition: transform 0.2s;
+      margin: 0.5%;
+    }
+
+    button:hover {
+      background: white;
+      color: black;
+      border: 1px solid black;
+      transform: scale(1.5);
+    }
+
+    span {
+      text-align: center;
+      font-size: 100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+  <title>Score Board</title>
+</head>
+<body>
+  <span>SCORE BOARD</span>
+  <div class="board" id="board"></div>
+  <button>1 run</button>
+  <button>2 runs</button>
+  <button>4 runs</button>
+  <button>6 runs</button>
+  <button>out</button>
+  <button>not out</button>
+  <button>- 1 runs</button>
+  <button>- 1 ball</button>
+  <button>wide</button>
+  <button>no ball</button>
+  <button>rst</button>
+  <button>innings swich</button>
+</body>
+<script>
+const board = document.getElementById("board");
+const targetElement = document.getElementById("target");
+const buttons = document.querySelectorAll("button");
+
+let score = 0;
+let wickets = 0;
+let balls = 0;
+let overs = 0;
+let ballsInOver = 0;
+let target = 0;
+let currentInnings = 1;
+
+function updateScoreboard() {
+  board.textContent = `${score}/${wickets} | (${overs}.${ballsInOver})`;
+  targetElement.textContent = `Target: ${target}`; // Display the target
+}
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    switch (button.textContent) {
+      case "1 run":
+      case "2 runs":
+      case "4 runs":
+      case "6 runs":
+        score += parseInt(button.textContent.split(" ")[0]);
+        balls += 1;
+        ballsInOver += 1;
+        if (ballsInOver === 6) {
+          overs += 1;
+          ballsInOver = 0;
+        }
+        break;
+      case "out":
+        wickets += 1;
+        balls += 1;
+        ballsInOver += 1;
+        if (ballsInOver === 6) {
+          overs += 1;
+          ballsInOver = 0;
+        }
+        break;
+      case "not out":
+        wickets -= 1; // Decrement wickets as the batter isn't out
+        break;
+      case "- 1 runs":
+        score -= 1;
+        break;
+      case "- 1 ball":
+        balls -= 1;
+        ballsInOver -= 1; // Adjust balls in over as well
+        if (ballsInOver < 0) {
+          overs -= 1;
+          ballsInOver = 5; // Set to 5 for the previous over
+        }
+        break;
+      case "wide":
+        score += 1;
+        break;
+      case "no ball":
+        score += 1;
+        balls -= 1; // Undo the ball added for the no ball itself
+        break;
+      case "rst":
+        score = 0;
+        wickets = 0;
+        balls = 0;
+        overs = 0;
+        ballsInOver = 0;
+        target = 0; // Reset target as well
+        currentInnings = 1;
+        break;
+      case "innings swich":
+        if (currentInnings === 1) {
+          target = score + 1; // Set target for second innings
+          currentInnings = 2;
+          updateScoreboard(); // Display the target immediately
+        } else {
+          // Handle the end of the second innings (e.g., declare winner)
+          // ...
+        }
+        break;
+    }
+
+    // Innings logic (with target-based win conditions)
+    if (wickets === 10 || score >= target) {
+      // Handle end of innings (reset scores or declare winner)
+      // ...
+    }
+
+    updateScoreboard();
+  });
+});
+
+updateScoreboard(); // Initial display
+
+</script>
+</html>
