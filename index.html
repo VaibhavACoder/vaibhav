@@ -38,6 +38,23 @@ body{
     transform: scale(1.2);
     cursor:pointer;
 }
+.recent{
+    background: none;
+    border: 2px solid white;
+    font-size: large;
+    color: white;
+    border-radius: 6px;
+    margin: 5px;
+    padding: 10px;
+    transition:transform 0.2s;
+}
+.recent:hover{
+    color: black;
+    background: white;
+    border: 2px solid black;
+    transform: scale(1.2);
+    cursor:pointer;
+}
 .project-container{
     border: 2px solid white;
     border-radius: 5px;
@@ -52,11 +69,36 @@ bottom: 0;
 height: 130%;
 z-index: -1;
 }
-.recent{
+.recent-container{
     border: 2px solid white;
+    border-radius: 5px;
+    text-align: right;
+    margin-bottom: 10px;
+    margin-top: 4px;
 }
 .welcome{
     color: black;
+}
+.title{
+    text-align: center;
+    color: white;
+    font: bold;
+    font-size: 30px;
+    animation: bordertitle 2s infinite alternate;
+}
+@keyframes bordertitle{
+    0%{
+        border: 3px solid white;
+    }
+    33%{
+        border: 3px solid yellow;
+    }
+    66%{
+        border:3px solid lightcyan;
+    }
+    100%{
+        border: 3px solid lightgoldenrodyellow  ;
+    }
 }
     </style>
 </head>
@@ -70,13 +112,14 @@ z-index: -1;
 </div>
 
 <div class="project-container">
-    
+    <div class="title">PROJECTS</div>
     <button onclick="window.open('form-login-result.html');" target="_blank"class="project">Result finder</button>
-    <button onclick="window.open('form-login-work.html');" target="_blank"class="project">recent work</button>
+    <button onclick="window.open('form-login-score.html');" target="_blank"class="project">score board</button>
 </div>
 
-<div class="recent">
-
+<div class="recent-container">
+    <div class="title">RECENT</div>
+    <button onclick="window.open('form-login-work.html');" target="_blank"class="recent">recent work</button>
 </div>
 </body>
 </html>
