@@ -1,90 +1,170 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1366px, initial-scale=1.0">
+    <title>result form</title>
     <style>
-        body{background-color:#f2f2f2}h2{text-align:center;
-margin-top:20px}table{margin:0 auto;
-width:80%;
-border-collapse:collapse;
-background-color:#fff;
-box-shadow:0 0 10px rgba(0,0,0,.1)}form{padding:20px}label{display:block;
-margin-bottom:5px;
-font-weight:bold}input[type="text"],input[type="number"],input[type="date"]{width:100%;
-padding:8px;
-border:1px solid #ccc;
-border-radius:4px;
-box-sizing:border-box;
-margin-bottom:10px}.button{background-color:#4CAF50;
-color:#fff;
-padding:10px 20px;
-border:none;
-border-radius:10px;
-cursor:pointer;
-margin-bottom:100px;
-margin-left:25%;
-width:50%;
-transition:transform .35s}.button:hover{transform:scale(1.5);
-animation:reset 2s infinite alternate}@keyframes reset{0%{background-color:skyblue}50%{background-color:lightsalmon}100%{background-color:lightslategray}}@media screen and (max-width:600px){table{width:100%}}
+body{
+    background-color:#f2f2f2;
+    font-weight: bold;
+}
+
+h2{
+    text-align:center;
+    margin-top:20px
+}
+
+table{
+    padding: 5%;
+    width:100%;
+    border-collapse:collapse;
+    background-color:#f2f2f2;
+    text-align: center;
+}
+td{
+    border-collapse:collapse;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+}
+tr{
+    border-collapse:collapse;
+}
+input{
+    width:90%;
+    padding:8px;
+    border:2px solid black;
+    border-radius:4px;
+    box-sizing:border-box;
+    margin-bottom:10px;
+}
+.button{
+    background-color:#4CAF50;
+    color:#fff;
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    margin:10px;
+    transition:transform 0.2s;
+    margin-bottom: 50px;
+    width: 60%;
+    font-size: 20px;
+}
+.button:hover{
+    transform:scale(1.5);
+    animation:submit 2s infinite alternate
+}
+@keyframes submit{
+    0%{
+    background-color:skyblue
+    }
+    50%{
+    background-color:lightsalmon
+    }
+    100%{
+    background-color:lightslategray
+}
+}
     </style>
-    <title>Student Information Form</title>
 </head>
 <body>
     <div class="animation">
-    <h2>Student Information Form</h2>
-    <table>
+        <h2>Student Information Form</h2>
         <form action="result.html" method="get">
-            <label for="studentname">Student Name:</label>
-            <input type="text" id="studentname" name="studentname"><br>
-            <label for="class">Class:</label>
-            <input type="text" id="class" name="class"><br>
-            <label for="fathername">Father's Name:</label>
-            <input type="text" id="fathername" name="fathername"><br>
-            <label for="mothername">Mother's Name:</label>
-            <input type="text" id="mothername" name="mothername"><br>
-            <label for="rollnumber">Roll Number:</label>
-            <input type="text" id="rollnumber" name="rollnumber"><br>
-            <label for="dob">Date of Birth:</label>
-            <input type="date" id="dob" name="dob"><br>
-            <label for="admissionnumber">Admission Number:</label>
-            <input type="text" id="admissionnumber" name="admissionnumber"><br>
-            <br><b>Marks in PT (out of 30)</b><br><br>
-            <label for="englishpt">English:</label><input type="number" id="englishpt" name="englishpt"><br>
-            <label for="hindipt">Hindi:</label><input type="number" id="hindipt" name="hindipt"><br>
-            <label for="sciencept">Science:</label><input type="number" id="sciencept" name="sciencept"><br>
-            <label for="mathspt">Maths:</label><input type="number" id="mathspt" name="mathspt"><br>
-            <label for="socialsciencept">Social Science:</label><input type="number" id="socialsciencept" name="socialsciencept"><br>
-            <label for="sanskritpt">Sanskrit:</label><input type="number" id="sanskritpt" name="sanskritpt"><br>
-            <label for="computerpt">Computer:</label><input type="number" id="computerpt" name="computerpt"><br>
-            <br><b>Marks in NB (out of 5)</b><br><br>
-            <label for="englishnb">English:</label><input type="number" id="englishnb" name="englishnb"><br>
-            <label for="hindinb">Hindi:</label><input type="number" id="hindinb" name="hindinb"><br>
-            <label for="sciencenb">Science:</label><input type="number" id="sciencenb" name="sciencenb"><br>
-            <label for="mathsnb">Maths:</label><input type="number" id="mathsnb" name="mathsnb"><br>
-            <label for="socialsciencenb">Social Science:</label><input type="number" id="socialsciencenb" name="socialsciencenb"><br>
-            <label for="sanskritnb">Sanskrit:</label><input type="number" id="sanskritnb" name="sanskritnb"><br>
-            <label for="computernb">Computer:</label><input type="number" id="computernb" name="computernb"><br>
-            <br><b>Marks in SE/SA (out of 5)</b><br><br>
-            <label for="englishsesa">English:</label><input type="number" id="englishsesa" name="englishsesa"><br>
-            <label for="hindisesa">Hindi:</label><input type="number" id="hindisesa" name="hindisesa"><br>
-            <label for="sciencesesa">Science:</label><input type="number" id="sciencesesa" name="sciencesesa"><br>
-            <label for="mathssesa">Maths:</label><input type="number" id="mathssesa" name="mathssesa"><br>
-            <label for="socialsciencesesa">Social Science:</label><input type="number" id="socialsciencesesa" name="socialsciencesesa"><br>
-            <label for="sanskritsesa">Sanskrit:</label><input type="number" id="sanskritsesa" name="sanskritsesa"><br>
-            <label for="computersesa">Computer:</label><input type="number" id="computersesa" name="computersesa"><br>
-            <br><b>Marks in Half Yearly (out of 80)</b><br><br>
-            <label for="englishhfy">English:</label><input type="number" id="englishhfy" name="englishhfy"><br>
-            <label for="hindihfy">Hindi:</label><input type="number" id="hindihfy" name="hindihfy"><br>
-            <label for="sciencehfy">Science:</label><input type="number" id="sciencehfy" name="sciencehfy"><br>
-            <label for="mathshfy">Maths:</label><input type="number" id="mathshfy" name="mathshfy"><br>
-            <label for="socialsciencehfy">Social Science:</label><input type="number" id="socialsciencehfy" name="socialsciencehfy"><br>
-            <label for="sanskrithfy">Sanskrit:</label><input type="number" id="sanskrithfy" name="sanskrithfy"><br>
-            <label for="computerhfy">Computer:</label><input type="number" id="computerhfy" name="computerhfy"><br>
-            <input type="submit" value="Submit" class="button">
-        </form>
-    </table>
-</div>
-    <script>
-        function handleSubmit(){const e=document.getElementById("studentname").value,
+        <table>
+            <tr>
+                <td colspan="2"><label for="studentname">Student Name:</label></td>
+                <td colspan="2"><label for="class">Class:</label></td>
+                <td colspan="2"><label for="fathername">Father's Name:</label></td>
+                <td rowspan="4"><label for="admissionnumber">Admission Number:</label><br><input type="text" id="admissionnumber" name="admissionnumber"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="text" id="studentname" name="studentname"></td>
+                <td colspan="2"><input type="text" id="class" name="class"></td>
+                <td colspan="2"><input type="text" id="fathername" name="fathername"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><label for="mothername">Mother's Name:</label></td>
+                <td colspan="2"><label for="rollnumber">Roll Number:</label></td>
+                <td colspan="2"><label for="dob">Date of Birth:</label></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="text" id="mothername" name="mothername"></td>
+                <td colspan="2"><input type="text" id="rollnumber" name="rollnumber"></td>
+                <td colspan="2"><input type="date" id="dob" name="dob"></td>
+            </tr>
+            <tr>
+                <tr>
+                    <td colspan="7"><br><hr><br></td>
+                </tr>
+            </tr>
+            <tr>
+                <td colspan="7"><b>Marks in PT (out of 30)</b></td>
+            </tr>
+            <tr>
+                <td><label for="englishpt">English:</label><input type="number" id="englishpt" name="englishpt"></td>
+                <td><label for="hindipt">Hindi:</label><input type="number" id="hindipt" name="hindipt"></td>
+                <td><label for="sciencept">Science:</label><input type="number" id="sciencept" name="sciencept"></td>
+                <td><label for="mathspt">Maths:</label><input type="number" id="mathspt" name="mathspt"></td>
+                <td><label for="socialsciencept">Social Science:</label><input type="number" id="socialsciencept" name="socialsciencept"></td>
+                <td><label for="sanskritpt">Sanskrit:</label><input type="number" id="sanskritpt" name="sanskritpt"></td>
+                <td><label for="computerpt">Computer:</label><input type="number" id="computerpt" name="computerpt"></td>
+            </tr>
+            <tr>
+                <td colspan="7"><br><hr><br></td>
+            </tr>
+            <tr>
+                <td colspan="7"><b>Marks in NB (out of 5)</b></td>
+            </tr>
+            <tr>
+                <td><label for="englishnb">English:</label><input type="number" id="englishnb" name="englishnb"></td>
+                <td><label for="hindinb">Hindi:</label><input type="number" id="hindinb" name="hindinb"></td>
+                <td><label for="sciencenb">Science:</label><input type="number" id="sciencenb" name="sciencenb"></td>
+                <td><label for="mathsnb">Maths:</label><input type="number" id="mathsnb" name="mathsnb"></td>
+                <td><label for="socialsciencenb">Social Science:</label><input type="number" id="socialsciencenb" name="socialsciencenb"></td>
+                <td><label for="sanskritnb">Sanskrit:</label><input type="number" id="sanskritnb" name="sanskritnb"></td>
+                <td><label for="computernb">Computer:</label><input type="number" id="computernb" name="computernb"></td>
+            </tr>
+            <tr>
+                <td colspan="7"><br><hr><br></td>
+            </tr>
+            <tr>
+                <td colspan="7"><b>Marks in SE/SA (out of 5)</b></td>
+            </tr>
+            <tr>
+                <td><label for="englishsesa">English:</label><input type="number" id="englishsesa" name="englishsesa"></td>
+                <td><label for="hindisesa">Hindi:</label><input type="number" id="hindisesa" name="hindisesa"></td>
+                <td><label for="sciencesesa">Science:</label><input type="number" id="sciencesesa" name="sciencesesa"></td>
+                <td><label for="mathssesa">Maths:</label><input type="number" id="mathssesa" name="mathssesa"></td>
+                <td><label for="socialsciencesesa">Social Science:</label><input type="number" id="socialsciencesesa" name="socialsciencesesa"></td>
+                <td><label for="sanskritsesa">Sanskrit:</label><input type="number" id="sanskritsesa" name="sanskritsesa"></td>
+                <td><label for="computersesa">Computer:</label><input type="number" id="computersesa" name="computersesa"></td>
+            </tr>
+            <tr>
+                <tr>
+                    <td colspan="7"><br><hr><br></td>
+                </tr>
+                <td colspan="7"><b>Marks in Half Yearly (out of 80)</b></td>
+            </tr>
+            <tr>
+                <td><label for="englishhfy">English:</label><input type="number" id="englishhfy" name="englishhfy"></td>
+                <td><label for="hindihfy">Hindi:</label><input type="number" id="hindihfy" name="hindihfy"></td>
+                <td><label for="sciencehfy">Science:</label><input type="number" id="sciencehfy" name="sciencehfy"></td>
+                <td><label for="mathshfy">Maths:</label><input type="number" id="mathshfy" name="mathshfy"></td>
+                <td><label for="socialsciencehfy">Social Science:</label><input type="number" id="socialsciencehfy" name="socialsciencehfy"></td>
+                <td><label for="sanskrithfy">Sanskrit:</label><input type="number" id="sanskrithfy" name="sanskrithfy"></td>
+                <td><label for="computerhfy">Computer:</label><input type="number" id="computerhfy" name="computerhfy"></td>
+            </tr>
+            <tr>
+                <td colspan="7"><input type="submit" value="Submit" class="button"></td>
+            </tr>
+            </table>
+            </form>
+    </div>
+</body>
+<script>
+    function handleSubmit(){const e=document.getElementById("studentname").value,
 t=document.getElementById("class").value,
 n=document.getElementById("rollnumber").value,
 o=document.getElementById("fathername").value,
@@ -92,7 +172,7 @@ d=document.getElementById("dob").value,
 a=document.getElementById("mothername").value,
 r=document.getElementById("admissionnumber").value,
 s=document.getElementById("englishpt").value,
-c=document.getElementById("hindipt").value,
+c=document.getElementBayId("hindipt").value,
 l=document.getElementById("sciencept").value,
 i=document.getElementById("mathspt").value,
 m=document.getElementById("socialsciencept").value,
@@ -156,6 +236,5 @@ sanskrithfy:D,
 computerhfy:L}).map(([e,
 t])=>`${e}=${encodeURIComponent(t)}`).join("&");
 window.location.href=`result.html?${O}`}
-    </script>
-</body>
+</script>
 </html>
